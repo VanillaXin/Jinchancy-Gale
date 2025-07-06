@@ -1,0 +1,9 @@
+{
+    "config.jinchancy_gale.prev": "<< Prev",
+    "config.jinchancy_gale.next": "Next >>",
+    "config.jinchancy_gale.save": "Save",
+    "config.jinchancy_gale.reset_default": "Reset Default",
+    "config.jinchancy_gale.cancel": "Cancel",
+    "config.jinchancy_gale.switch_to_client": "Switch to Client",
+    "config.jinchancy_gale.switch_to_server": "Switch to Server"
+}

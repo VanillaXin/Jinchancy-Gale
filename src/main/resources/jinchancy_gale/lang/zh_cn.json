@@ -1,0 +1,9 @@
+{
+    "config.jinchancy_gale.prev": "<< 上一页",
+    "config.jinchancy_gale.next": "下一页 >>",
+    "config.jinchancy_gale.save": "保存",
+    "config.jinchancy_gale.reset_default": "恢复默认",
+    "config.jinchancy_gale.cancel": "取消",
+    "config.jinchancy_gale.switch_to_client": "切换至客户端配置",
+    "config.jinchancy_gale.switch_to_server": "切换至服务端配置"
+}
