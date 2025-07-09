@@ -20,7 +20,7 @@ public class ConfigCommand {
     public static void register(RegisterCommandsEvent event) {
         CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
         dispatcher.register(Commands.literal("jcgconfig").requires((ret) -> ret.hasPermission(2))
-                .then(Commands.literal("open_screen").executes((ret) -> openScreen(ret))));
+                .then(Commands.literal("open_screen").executes(ConfigCommand::openScreen)));
     }
 
     public static int openScreen(CommandContext<CommandSourceStack> ret) {
@@ -28,9 +28,10 @@ public class ConfigCommand {
         if (player != null) {
             if (!player.hasPermissions(2)) {
                 Minecraft.getInstance().setScreen(new ConfigScreen(Map.copyOf(ConfigManager.createSyncData(false)), true));
+            } else {
+                ConfigPacket packet = ConfigPacket.createForSync(Map.copyOf(ConfigManager.map));
+                NetworkHandler.sendToClient(packet, player);
             }
-            ConfigPacket packet = ConfigPacket.createForSync(Map.copyOf(ConfigManager.map));
-            NetworkHandler.sendToClient(packet, player);
         }
         return 0;
     }

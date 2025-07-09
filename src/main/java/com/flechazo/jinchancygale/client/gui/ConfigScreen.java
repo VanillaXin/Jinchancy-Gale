@@ -117,6 +117,7 @@ public class ConfigScreen extends Screen {
                                 "config.jinchancy_gale.switch_to_server" :
                                 "config.jinchancy_gale.switch_to_client"),
                         button -> {
+                            saveCurrentPageChanges();
                             if (origin != null) {
                                 Minecraft.getInstance().setScreen(origin);
                             } else {
